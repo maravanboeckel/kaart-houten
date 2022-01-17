@@ -3,7 +3,12 @@
 
 # In[ ]:
 
-
+import pandas as pd
+import folium
+import streamlit as st
+from streamlit_folium import folium_static
+import plotly.express as px
+import branca
 
 st.title('Kaart van (scheve) lantaarnpalen in Houten')
 st.subheader('De linkerkaart geeft de scheefstanden van de elektronische waterpas, de rechter van het algoritme')
