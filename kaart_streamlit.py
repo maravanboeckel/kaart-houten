@@ -9,8 +9,7 @@ import streamlit as st
 from streamlit_folium import folium_static
 import branca
 
-st.sidebar.subheader('Gemaakt door:')
-st.sidebar.write('Mara van Boeckel')
+
 st.title('Kaart van (scheve) lantaarnpalen in Houten')
 st.subheader('De linkerkaart geeft de scheefstanden van de elektronische waterpas, de rechter van het algoritme')
 vergelijk1=pd.read_csv('Data_kaart.csv')    
