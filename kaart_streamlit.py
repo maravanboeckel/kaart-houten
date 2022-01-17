@@ -6,7 +6,7 @@
 
 vergelijk1=pd.read_csv('Data_kaart.csv')
 st.title('Kaart van (scheve) lantaarnpalen in Houten')
-    st.subheader('De linker kaart geeft de scheefstanden van de elektronische waterpas, de rechter van het algoritme')
+    st.subheader('De linkerkaart geeft de scheefstanden van de elektronische waterpas, de rechter van het algoritme')
     
     def scheef(scheefstand):
         if  abs(scheefstand) >= 1 and scheefstand <3:
