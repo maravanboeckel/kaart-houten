@@ -1,0 +1,5 @@
+streamlit.folium==0.4.0
+folium==0.12.1
+streamlit==0.89.0
+pandas==1.2.4
+branca==0.4.2
