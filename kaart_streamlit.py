@@ -178,3 +178,40 @@ legend_houten = add_categorical_legend(map_houten, 'Scheefstand',
                            labels=['Meer dan 6°', 'Tussen 3° en 6°', 'Tussen 1° en 3°', 'Minder dan 1°'])
 folium_static(map_houten, width = 1000, height = 750)
 
+
+
+map_houten1= folium.Map(location=[52.015154,5.171879], zoom_start = 15)
+tooltip = "Klik voor informatie"
+
+waterpas= folium.FeatureGroup(name='Scheefstand elektronische waterpas',show=False)
+algoritme= folium.FeatureGroup(name='Scheefstand algoritme',show=True)
+
+for row in Houten.iterrows():
+    row_values = row[1]
+    location = [row_values['lat'], row_values['lon']]
+    popup = ('Fotonummer:'+' '+ row_values['lantaarnpaal_nummer']+'<strong>'+'<br>'+'<br>'+
+             'Scheefstand: '+ str(round(row_values['scheefstand'],2))+'°'+'</strong>'+'<br>'+'<br>'+
+            'Lat, lon: '+str(row_values['lat'])+',' + '<br>' + str(row_values['lon'])    )
+            
+    marker = folium.CircleMarker(location = location,popup=popup,tooltip=tooltip,color=scheef(row_values['scheefstand']), fill_color=scheef(row_values['scheefstand']))
+    marker.add_to(waterpas)
+    waterpas.add_to(map_houten)
+    
+    
+for row in Houten.iterrows():
+    row_values = row[1]
+    location = [row_values['lat'], row_values['lon']]
+    popup = ('Fotonummer:'+' '+ row_values['lantaarnpaal_nummer']+'<strong>'+'<br>'+'<br>'+
+             'Scheefstand: '+ str(round(row_values['scheefstand_tov_kader'],2))+'°'+'</strong>'+'<br>'+'<br>'+
+            'Lat, lon: '+str(row_values['lat'])+',' + '<br>' + str(row_values['lon'])   )
+            
+    marker = folium.CircleMarker(location = location,popup=popup,tooltip=tooltip,color=scheef1(row_values['scheefstand_tov_kader']), fill_color=scheef(row_values['scheefstand_tov_kader']))
+    marker.add_to(algoritme)
+    algoritme.add_to(map_houten)
+    
+map_legend = add_categorical_legend(map_houten1, 'Scheefstand',
+                           colors=['darkred','red', 'orange', 'green'],
+                           labels=['Meer dan 6°', 'Tussen 3° en 6°', 'Tussen 1° en 3°', 'Minder dan 1°'])   
+    
+folium.LayerControl(position='topleft').add_to(map_houten1)
+folium_static(map_houten1, width = 1000, height = 750)
