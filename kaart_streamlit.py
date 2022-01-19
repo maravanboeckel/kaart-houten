@@ -195,7 +195,7 @@ for row in vergelijk1.iterrows():
             
     marker = folium.CircleMarker(location = location,popup=popup,tooltip=tooltip,color=scheef(row_values['scheefstand']), fill_color=scheef(row_values['scheefstand']))
     marker.add_to(waterpas)
-    waterpas.add_to(map_houten)
+    waterpas.add_to(map_houten1)
     
     
 for row in vergelijk1.iterrows():
@@ -207,7 +207,7 @@ for row in vergelijk1.iterrows():
             
     marker = folium.CircleMarker(location = location,popup=popup,tooltip=tooltip,color=scheef1(row_values['scheefstand_tov_kader']), fill_color=scheef(row_values['scheefstand_tov_kader']))
     marker.add_to(algoritme)
-    algoritme.add_to(map_houten)
+    algoritme.add_to(map_houten1)
     
 map_legend = add_categorical_legend(map_houten1, 'Scheefstand',
                            colors=['darkred','red', 'orange', 'green'],
