@@ -7,7 +7,6 @@ import pandas as pd
 import folium
 import streamlit as st
 from streamlit_folium import folium_static
-import branca
 
 
 st.title('Kaart van (scheve) lantaarnpalen in Houten')
