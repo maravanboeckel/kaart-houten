@@ -186,7 +186,7 @@ tooltip = "Klik voor informatie"
 waterpas= folium.FeatureGroup(name='Scheefstand elektronische waterpas',show=False)
 algoritme= folium.FeatureGroup(name='Scheefstand algoritme',show=True)
 
-for row in Houten.iterrows():
+for row in vergelijk1.iterrows():
     row_values = row[1]
     location = [row_values['lat'], row_values['lon']]
     popup = ('Fotonummer:'+' '+ row_values['lantaarnpaal_nummer']+'<strong>'+'<br>'+'<br>'+
@@ -198,7 +198,7 @@ for row in Houten.iterrows():
     waterpas.add_to(map_houten)
     
     
-for row in Houten.iterrows():
+for row in vergelijk1.iterrows():
     row_values = row[1]
     location = [row_values['lat'], row_values['lon']]
     popup = ('Fotonummer:'+' '+ row_values['lantaarnpaal_nummer']+'<strong>'+'<br>'+'<br>'+
