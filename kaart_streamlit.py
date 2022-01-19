@@ -188,10 +188,10 @@ algoritme= folium.FeatureGroup(name='Scheefstand algoritme',show=True)
 
 for row in vergelijk1.iterrows():
     row_values = row[1]
-    location = [row_values['lat'], row_values['lon']]
+    location = [row_values['lat_x'], row_values['lon_x']]
     popup = ('Fotonummer:'+' '+ row_values['lantaarnpaal_nummer']+'<strong>'+'<br>'+'<br>'+
              'Scheefstand: '+ str(round(row_values['scheefstand'],2))+'°'+'</strong>'+'<br>'+'<br>'+
-            'Lat, lon: '+str(row_values['lat'])+',' + '<br>' + str(row_values['lon'])    )
+            'Lat, lon: '+str(row_values['lat_x'])+',' + '<br>' + str(row_values['lon_x'])    )
             
     marker = folium.CircleMarker(location = location,popup=popup,tooltip=tooltip,color=scheef(row_values['scheefstand']), fill_color=scheef(row_values['scheefstand']))
     marker.add_to(waterpas)
@@ -200,10 +200,10 @@ for row in vergelijk1.iterrows():
     
 for row in vergelijk1.iterrows():
     row_values = row[1]
-    location = [row_values['lat'], row_values['lon']]
+    location = [row_values['lat_x'], row_values['lon_x']]
     popup = ('Fotonummer:'+' '+ row_values['lantaarnpaal_nummer']+'<strong>'+'<br>'+'<br>'+
              'Scheefstand: '+ str(round(row_values['scheefstand_tov_kader'],2))+'°'+'</strong>'+'<br>'+'<br>'+
-            'Lat, lon: '+str(row_values['lat'])+',' + '<br>' + str(row_values['lon'])   )
+            'Lat, lon: '+str(row_values['lat_x'])+',' + '<br>' + str(row_values['lon_x'])   )
             
     marker = folium.CircleMarker(location = location,popup=popup,tooltip=tooltip,color=scheef1(row_values['scheefstand_tov_kader']), fill_color=scheef(row_values['scheefstand_tov_kader']))
     marker.add_to(algoritme)
