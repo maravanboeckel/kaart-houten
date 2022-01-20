@@ -209,7 +209,7 @@ for row in vergelijk1.iterrows():
     marker.add_to(algoritme)
     algoritme.add_to(map_houten1)
     
-map_legend = add_categorical_legend(map_houten1, 'Scheefstand',
+map_houten1 = add_categorical_legend(map_houten1, 'Scheefstand',
                            colors=['darkred','red', 'orange', 'green'],
                            labels=['Meer dan 6°', 'Tussen 3° en 6°', 'Tussen 1° en 3°', 'Minder dan 1°'])   
     
